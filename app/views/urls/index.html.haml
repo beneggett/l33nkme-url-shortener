@@ -1,0 +1,24 @@
+%h1 Urls
+%table.table.table-striped
+  %thead
+    %tr
+      %th ID
+      %th
+        = t("activerecord.attributes.url.shorturl", :default => t("activerecord.labels.shorturl", :default => "Short Url"))
+      %th
+        = t("activerecord.attributes.url.url", :default => t("activerecord.labels.url", :default => "Full Url"))
+      %th Created at
+      %th Actions
+  %tbody
+    - @urls.each do |url|
+      %tr
+        %td= url.id
+        %td= link_to root_url.gsub("http://", '') + url.shorturl, url_path(url)
+        %td= link_to truncate(url.url.gsub("http://", ''), :length => 70), url_path(url)
+        %td= url.created_at
+        %td
+          = link_to "Show", url_path(url), :class => 'btn btn-mini'
+          = link_to "Edit", edit_url_path(url), :class => 'btn btn-mini'
+          = link_to "Destroy", url_path(url), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-mini btn-danger' 
+
+= link_to "New", new_url_path, :class => 'btn btn-primary'

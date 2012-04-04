@@ -1,0 +1,11 @@
+= simple_form_for @url, :html => { :class => 'form-horizontal' } do |f|
+	%fieldset
+		%legend
+			%h1= controller.action_name.capitalize + ' ' + controller.controller_name.capitalize.singularize
+		= f.input :url, :as => "string", :placeholder => "Full url starting with http://", :label => 'URL to shorten'
+		= f.input :shorturl, :as => "string", :placeholder => 'shrtUrl', :label => 'Short URL'
+		= f.input :date_created, :as => 'date', :class => 'datetime_select', :label => 'Date Created'
+		= f.input :clicks, :as => "integer", :class => 'number_field', :label => 'Number of Clicks'
+		.form-actions
+			= f.button :submit, :class => 'btn btn-primary'
+			= link_to "Cancel", urls_path, :class => 'btn btn-danger'

@@ -1,0 +1,4 @@
+Basic URL Shortener
+===================
+
+This is a very basic url shortener built in ruby on rails.

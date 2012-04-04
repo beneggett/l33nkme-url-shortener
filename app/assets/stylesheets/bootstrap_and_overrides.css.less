@@ -1,0 +1,33 @@
+@import "twitter/bootstrap/bootstrap";
+body { padding-top: 60px; }
+
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
+@iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
+
+.table td {
+	background: #ddd;
+}
+.form-actions {
+	background: none;
+	border: none;
+}
+label {
+	float: left;
+	width: 300px;
+	text-align: right;
+	margin: 5px;
+	font-size: 16px;
+	line-height: 22px;
+}
+input[type="text"]{
+	width: 400px;
+	margin: 5px;
+}
+select.date, input.integer{
+	width: 128px;
+	margin: 5px;
+	
+}

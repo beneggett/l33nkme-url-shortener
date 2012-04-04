@@ -1,0 +1,82 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//-----------------------------------------
+// Document styles
+//-----------------------------------------
+
+html {}
+body{
+	width: 1000px;
+	margin:0 auto;
+    background: #8EC1DA url(/assets/bg.jpg) scroll left top;
+	}
+.url_field{
+	width: 625px;
+	margin:0 auto;
+	.field {
+	float: left;
+	margin-right:10px;
+
+	}
+		
+}
+.editUrls{
+	form{
+		text-align:left;
+		.field {
+		margin: 15px 0;
+		padding: 10px 0;
+			label{width:100px;margin-right:15px;float:left;text-align:right;}
+			input{width:400px;float:left;}
+		}
+		.actions{
+			text-align:right;
+			margin:10px 80px 0 0 ;
+		}
+	}
+}
+input[type=text] {border:1px dashed lightblue; border-radius:5px; -moz-border-radius:5px;-wekbit-border-radius:5px;font-size:16px;padding:5px;color: #005994;}
+input[type=text]:focus{background: #005994; color:#e2e2e2;}
+footer{
+	margin-top:10px;
+    text-align:center;
+
+}
+.notice {
+	background: green;
+	color: white;
+	border: 1px dotted lightGreen;
+	padding: 2px 20px;
+	font-size: 16px;
+	line-height: 12px;
+	margin-bottom:20px;
+}
+p {font-size:16px;} 
+// a, a:link, a:visited {color: #005994;}
+#header{text-align:center;margin:-30px 0 40px 0;}
+#header h1{padding-top:35px;font-family:"Myriad Pro",Helvetica,Arial,sans-serif;color:white;font-size:45px; text-shadow: 1px 2px 5px #ccc}
+#header h1 span {text-shadow: 1px 2px 5px #1d1d1d}
+#content{background: rgba(240,240,255,0.7); min-height:300px;width:975px;margin:25px auto;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius: 10px; padding:25px;}
+
+table{text-align:left;width: 100%;}
+table tr * {margin:0px 5px 0 0;padding: 5px 0 0 5px;}
+table tbody tr:nth-child(odd){background: #a2d5e8}
+table tr th{background: #214e66; color:white; text-align:center ;}
+table .clicks {text-align: center;}
+
+.editUrls { margin: 0 auto; width:600px;}
+
+#url_field { 
+	display: inline;
+	div{
+		display: inline;
+	}
+	input{
+		margin: 0px 5px;
+		
+	}
+	
+}

@@ -1,0 +1,5 @@
+RewriteEngine On
+# redirect www to non www
+RewriteCond %{HTTP_HOST} !^l33nk.me$ [NC]
+RewriteRule ^(.*)$ http://l33nk.me/$1 [L,R=301]
+

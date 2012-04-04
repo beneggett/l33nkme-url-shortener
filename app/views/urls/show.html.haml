@@ -1,0 +1,20 @@
+%h3
+	%strong= t("activerecord.attributes.url.url", :default => t("activerecord.labels.url", :default => "Url")) + ":"
+	= link_to @url.url
+%h3
+	%strong= t("activerecord.attributes.url.shorturl", :default => t("activerecord.labels.shorturl", :default => "Shorturl")) + ":"
+
+	= link_to root_url + @url.shorturl
+%h3
+	%strong= t("activerecord.attributes.url.date_created", :default => t("activerecord.labels.date_created", :default => "Date created")) + ":"
+
+	= @url.date_created
+%h3
+	%strong= t("activerecord.attributes.url.clicks", :default => t("activerecord.labels.clicks", :default => "Clicks")) + ":"
+
+	= @url.clicks
+
+.form-actions
+	= link_to "Back", urls_path, :class => 'btn'
+	= link_to "Edit", edit_url_path(@url), :class => 'btn'
+	= link_to "Delete", url_path(@url), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-danger'
