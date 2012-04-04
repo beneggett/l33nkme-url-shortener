@@ -1,10 +1,10 @@
 %h3
 	%strong= t("activerecord.attributes.url.url", :default => t("activerecord.labels.url", :default => "Url")) + ":"
-	= link_to @url.url
+	= link_to @url.url, @url.url
 %h3
 	%strong= t("activerecord.attributes.url.shorturl", :default => t("activerecord.labels.shorturl", :default => "Shorturl")) + ":"
 
-	= link_to root_url + @url.shorturl
+	= link_to root_url + @url.shorturl, root_url + @url.shorturl
 %h3
 	%strong= t("activerecord.attributes.url.date_created", :default => t("activerecord.labels.date_created", :default => "Date created")) + ":"
 

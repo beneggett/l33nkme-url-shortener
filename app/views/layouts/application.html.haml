@@ -1,13 +1,45 @@
-!!! 
-- ie_html :class => "no-js", :lang => "en" do
-  = render "head"
-  %body{ :class => "#{ controller.controller_name }" }
-    #content 
-      = render "header"
-      #main{ :role => "main" }
-        = render "flashes"
+!!! 5
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title= content_for?(:title) ? yield(:title) : "L33nkMe"
+    = csrf_meta_tags
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+    / Le styles
+    = stylesheet_link_tag "application", :media => "all"
+    / Le fav and touch icons
+    %link{:href => "images/favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon"}/
+    %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
+    %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
+
+
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container-fluid
+          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand{:href => "/"} l33nk.me
+          .container-fluid.nav-collapse
+            %ul.nav
+              %li= link_to "Create new URL", new_url_path
+              %li= link_to "See all Urls", urls_path
+
+    #content.container-fluid
+      .row-fluid
+        - flash.each do |name, msg|
+          %div{ :class => "alert alert-#{ name == :notice ? "success" : "error" }"}
+            %a{ :class => "close", "data-dismiss" => "alert"} ×
+            = msg 
         = yield
-      = render "footer"
-      -# Javascript at the bottom for fast page loading
-      = render "javascripts"
-	  
+    
+      %footer
+        %p &copy; #{Date.today.year} #{ link_to "Ben Eggett", "http://www.beneggett.com"}
+    = javascript_include_tag "application"
+
+

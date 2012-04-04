@@ -54,7 +54,8 @@ class UrlsController < ApplicationController
         format.html { redirect_to @url, notice: 'Your URL has been shortened' }
         format.json { render json: @url, status: :created, location: @url }
       else
-        format.html { redirect_to root_url, :notice => "You must enter a valid URL, beginning with http:// or https://" }
+        format.html { 
+          redirect_to :back, :notice => "You must enter a valid URL, beginning with http:// or https://" }
         format.json { render json: @url.errors, status: :unprocessable_entity }
       end
     end
